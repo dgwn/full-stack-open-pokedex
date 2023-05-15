@@ -5,9 +5,6 @@ on:
     branches:
       - master
 
-env:
-  ELECTRON_EXTRA_LAUNCH_ARGS: "--disable-gpu"
-
 jobs:
   deployment_pipeline:
     runs-on: ubuntu-20.04
@@ -27,7 +24,6 @@ jobs:
       - name: E2E Tests
         uses: cypress-io/github-action@v5
         with:
-          browser: electron
-          command: unset $DISPLAY && npm run test:e2e
+          command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:8080
