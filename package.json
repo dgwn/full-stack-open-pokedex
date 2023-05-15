@@ -9,7 +9,7 @@
     "test": "jest",
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production",
-    "test:e2e": "cypress open --disable-gpu"
+    "test:e2e": "cypress open --browser chrome"
   },
   "repository": {
     "type": "git",

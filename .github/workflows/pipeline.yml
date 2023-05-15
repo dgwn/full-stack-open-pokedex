@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  ELECTRON_EXTRA_LAUNCH_ARGS: "--disable-gpu"
+
 jobs:
   deployment_pipeline:
     runs-on: ubuntu-20.04
