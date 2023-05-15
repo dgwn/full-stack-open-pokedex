@@ -21,5 +21,6 @@ module.exports = {
   rules: {
     quotes: "off",
     "react/prop-types": "off"
-  }
+  },
+  extends: ["plugin:cypress/recommended"]
 };
