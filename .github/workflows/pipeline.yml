@@ -28,6 +28,6 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           browser: electron
-          command: echo $DISPLAY && npm run test:e2e
+          command: unset $DISPLAY && npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:8080
