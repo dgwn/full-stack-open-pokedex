@@ -29,5 +29,5 @@ jobs:
         with:
           browser: firefox
           command: npm run test:e2e
-          start: npm run start-prod
+          start: npm run start-test
           wait-on: http://localhost:8080
