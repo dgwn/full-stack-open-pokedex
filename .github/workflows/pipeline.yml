@@ -50,10 +50,8 @@ jobs:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
       - name: check if commit message contains skip
-        env:
-          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-        if: ${{ $COMMIT_MESSAGES.contains('#skip') == false }}
-        run: echo "$COMMIT_MESSAGES" && echo "does not skip"
+        if: ${{ !contains(join(github.event.commits.*.message), '#skip') }}
+        run: echo "skip this commit"
 
       # - name: bump version and push tag
       #   if: ${{ github.event_name == 'push' }}
