@@ -53,7 +53,7 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         if: ${{ COMMIT_MESSAGES }}.contains('#skip') == false
-          run: echo "$COMMIT_MESSAGES" + "does not skip"
+        run: echo "$COMMIT_MESSAGES" && echo "does not skip"
 
       # - name: bump version and push tag
       #   if: ${{ github.event_name == 'push' }}
